@@ -28,7 +28,16 @@
     ],
     "class-methods-use-this":"off",
     "prettier/prettier": "error",
-    "camelcase": "off"
+    "camelcase": "off",
+    "no-useless-constructor":"off",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "interface",
+        "prefix": ["I"],
+        "format": ["PascalCase"]
+      }
+    ]
   },
   "settings": {
     "import/resolver": {
