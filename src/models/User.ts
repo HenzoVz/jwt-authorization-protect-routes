@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose';
 
-import IUser from '../Interfaces/IUser';
+import InterfaceUser from '../Interfaces/InterfaceUser';
 
 const userSchema = new Schema({
   name: {
@@ -23,8 +23,8 @@ const userSchema = new Schema({
   },
   createdAt: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
-export default model<IUser>("User", userSchema);
+export default model<InterfaceUser>('User', userSchema);

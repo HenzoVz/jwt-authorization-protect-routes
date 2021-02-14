@@ -9,7 +9,7 @@ userRouter.post('/', async (request: Request, response: Response) => {
   const { name, email, password } = request.body;
 
   try {
-    const userExists = await User.findOne({ email: email });
+    const userExists = await User.findOne({ email });
 
     if (userExists) {
       return response.status(400).json('Email already exists.');
@@ -20,7 +20,7 @@ userRouter.post('/', async (request: Request, response: Response) => {
     const user = new User({
       name,
       email,
-      password: hashedPassword
+      password: hashedPassword,
     });
 
     await user.save();
@@ -28,7 +28,6 @@ userRouter.post('/', async (request: Request, response: Response) => {
     delete user.password;
 
     return response.json(user);
-
   } catch (error) {
     return response.status(400).json({ error: error.message });
   }
