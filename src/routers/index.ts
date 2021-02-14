@@ -1,5 +1,4 @@
 import * as dotenv from 'dotenv';
-dotenv.config()
 
 import { Router } from 'express';
 
@@ -8,6 +7,7 @@ import sessionController from '../controllers/CreateSessionController';
 
 import '../database';
 
+dotenv.config();
 
 const routers = Router();
 
